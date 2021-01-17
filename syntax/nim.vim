@@ -66,7 +66,6 @@ syn region  nimComment       start="#\[" end="\]#" contains=nimTodo,@Spell
 syn keyword nimTodo          TODO FIXME XXX contained
 syn keyword nimBoolean       true false
 syn match   nimPragma        "{\..*\.}"
-"contained
 
 " Strings
 syn region nimString start=+'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=nimEscape,nimEscapeError,@Spell
@@ -182,8 +181,8 @@ if v:version >= 508 || !exists('did_nim_syn_inits')
   HiLink nimTodo		        Todo
   HiLink nimDecorator	    Define
   HiLink nimSpecialVar	    Identifier
-  HiLink nimPragma	      Pragma
-  
+  HiLink nimPragma	     Pragma
+
   if nim_highlight_numbers == 1
     HiLink nimNumber	Number
   endif

@@ -1,7 +1,7 @@
 # change colors
 
 - pragma
-  - execute printf("highlight %s ctermfg=%s guifg=%s", "Pragma", 8, 10)
+  - highlight Pragma ctermfg=7 guifg=#000000
 
 # Nim language support for Vim
 
