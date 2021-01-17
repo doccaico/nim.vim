@@ -1,3 +1,8 @@
+# change colors
+
+- pragma
+  - execute printf("highlight %s ctermfg=%s guifg=%s", "Pragma", 8, 10)
+
 # Nim language support for Vim
 
 This provides [Nim](http://nim-lang.org) language support for Vim:

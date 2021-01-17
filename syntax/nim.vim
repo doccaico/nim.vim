@@ -33,25 +33,26 @@ endif
 
 syn region nimBrackets       contained extend keepend matchgroup=Bold start=+\(\\\)\@<!\[+ end=+]\|$+ skip=+\\\s*$\|\(\\\)\@<!\\]+ contains=@tclCommandCluster
 
-syn keyword nimKeyword       addr and as asm atomic
+" https://nim-lang.org/docs/manual.html#lexical-analysis-identifiers-amp-keywords
+syn keyword nimKeyword       addr and as asm
 syn keyword nimKeyword       bind block break
 syn keyword nimKeyword       case cast concept const continue converter
 syn keyword nimKeyword       defer discard distinct div do
 syn keyword nimKeyword       elif else end enum except export
-syn keyword nimKeyword       finally for from
-syn keyword nimKeyword       generic
+syn keyword nimKeyword       finally for from func
 syn keyword nimKeyword       if import in include interface is isnot iterator
 syn keyword nimKeyword       let
+syn keyword nimKeyword       macro method mixin mod
 syn keyword nimKeyword       mixin using mod
 syn keyword nimKeyword       nil not notin
 syn keyword nimKeyword       object of or out
-syn keyword nimKeyword       proc func method macro template nextgroup=nimFunction skipwhite
-syn keyword nimKeyword       ptr
+syn keyword nimKeyword       proc ptr
 syn keyword nimKeyword       raise ref return
-syn keyword nimKeyword       shared shl shr static
-syn keyword nimKeyword       try tuple type
-syn keyword nimKeyword       var vtref vtptr
-syn keyword nimKeyword       when while with without
+syn keyword nimKeyword       shl shr static
+syn keyword nimKeyword       template try tuple type
+syn keyword nimKeyword       using
+syn keyword nimKeyword       var
+syn keyword nimKeyword       when while
 syn keyword nimKeyword       xor
 syn keyword nimKeyword       yield
 
@@ -64,7 +65,8 @@ syn match   nimComment       "#.*$" contains=nimTodo,@Spell
 syn region  nimComment       start="#\[" end="\]#" contains=nimTodo,@Spell
 syn keyword nimTodo          TODO FIXME XXX contained
 syn keyword nimBoolean       true false
-
+syn match   nimPragma        "{\..*\.}"
+"contained
 
 " Strings
 syn region nimString start=+'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=nimEscape,nimEscapeError,@Spell
@@ -180,6 +182,7 @@ if v:version >= 508 || !exists('did_nim_syn_inits')
   HiLink nimTodo		        Todo
   HiLink nimDecorator	    Define
   HiLink nimSpecialVar	    Identifier
+  HiLink nimPragma	      Pragma
   
   if nim_highlight_numbers == 1
     HiLink nimNumber	Number
