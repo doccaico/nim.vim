@@ -168,35 +168,39 @@ if v:version >= 508 || !exists('did_nim_syn_inits')
   endif
 
   " The default methods for highlighting.  Can be overridden later
-  HiLink nimBrackets       Operator
   HiLink nimKeyword	      Keyword
-  HiLink nimFunction	    	Function
-  HiLink nimConditional	  Conditional
   HiLink nimRepeat		      Repeat
   HiLink nimString		      String
   HiLink nimRawString	    String
-  HiLink nimBoolean        Boolean
-  HiLink nimEscape		      Special
-  HiLink nimOperator		    Operator
-  HiLink nimPreCondit	    PreCondit
   HiLink nimComment		    Comment
   HiLink nimTodo		        Todo
-  HiLink nimDecorator	    Define
-  HiLink nimSpecialVar	    Identifier
-  HiLink nimPragma	     Pragma
+  HiLink nimBoolean        Boolean
+  " HiLink nimBrackets       Operator
+  " HiLink nimFunction	    	Function
+  " HiLink nimConditional	  Conditional
+  " HiLink nimEscape		      Special
+  " HiLink nimPreCondit	    PreCondit
+  " HiLink nimDecorator	    Define
+  " HiLink nimSpecialVar	    Identifier
+  " HiLink nimPragma	     Pragma
+  " HiLink nimOperator		    Operator
+
+  if nim_highlight_operators == 1
+    HiLink nimOperator	Operator
+  endif
 
   if nim_highlight_numbers == 1
     HiLink nimNumber	Number
   endif
-  
+
   if nim_highlight_builtins == 1
     HiLink nimBuiltin	Number
   endif
-  
+
   if nim_highlight_exceptions == 1
     HiLink nimException	Exception
   endif
-  
+
   if nim_highlight_space_errors == 1
     HiLink nimSpaceError	Error
   endif
