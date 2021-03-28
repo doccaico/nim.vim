@@ -175,9 +175,9 @@ if v:version >= 508 || !exists('did_nim_syn_inits')
   HiLink nimComment		    Comment
   HiLink nimTodo		        Todo
   HiLink nimBoolean        Boolean
+  HiLink nimConditional	  Conditional
   " HiLink nimBrackets       Operator
   " HiLink nimFunction	    	Function
-  " HiLink nimConditional	  Conditional
   " HiLink nimEscape		      Special
   " HiLink nimPreCondit	    PreCondit
   " HiLink nimDecorator	    Define
